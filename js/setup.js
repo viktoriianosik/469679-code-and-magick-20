@@ -15,17 +15,17 @@ var randomElement = function (array) {
   return Math.floor(Math.random() * array.length);
 };
 
-var wizards = [];
 
 var generateWizards = function () {
+  var wizards = [];
   for (var i = 0; i < 4; i++) {
-    var wizard = {
+    wizards.push({
       name: firstNames[randomElement(firstNames)] + ' ' + lastNames[randomElement(lastNames)],
       coatColor: coatColors[randomElement(coatColors)],
       eyesColor: eyesColors[randomElement(eyesColors)],
-    };
-    wizards.push(wizard);
+    });
   }
+  return wizards;
 };
 
 var similarListElement = setup.querySelector('.setup-similar-list');
@@ -39,7 +39,7 @@ var renderWizard = function (el) {
   return wizardElement;
 };
 
-generateWizards();
+var wizards = generateWizards();
 
 var fragment = document.createDocumentFragment();
 
