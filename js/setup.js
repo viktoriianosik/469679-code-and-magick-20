@@ -16,7 +16,6 @@
   };
 
   window.setup = {
-    setup: setup,
     coatColors: coatColors,
     eyesColors: eyesColors,
     fireballColors: fireballColors,

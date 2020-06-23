@@ -1,10 +1,12 @@
 'use strict';
 
 (function () {
-
+  var setup = document.querySelector('.setup');
   var setupOpen = document.querySelector('.setup-open');
-  var setupClose = window.setup.setup.querySelector('.setup-close');
-  var setupUserName = window.setup.setup.querySelector('.setup-user-name');
+  var setupClose = setup.querySelector('.setup-close');
+  var setupUserName = setup.querySelector('.setup-user-name');
+  var SETUP_TOP = 80 + 'px';
+  var SETUP_LEFT = 50 + '%';
 
   var onPopupEscPress = function (evt) {
     if (evt.key === 'Escape') {
@@ -14,12 +16,14 @@
   };
 
   var openPopup = function () {
-    window.setup.setup.classList.remove('hidden');
+    setup.classList.remove('hidden');
     document.addEventListener('keydown', onPopupEscPress);
   };
 
   var closePopup = function () {
-    window.setup.setup.classList.add('hidden');
+    setup.classList.add('hidden');
+    setup.style.top = SETUP_TOP;
+    setup.style.left = SETUP_LEFT;
     document.removeEventListener('keydown', onPopupEscPress);
   };
 
