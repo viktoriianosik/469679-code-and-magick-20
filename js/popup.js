@@ -24,6 +24,7 @@
     setup.classList.add('hidden');
     setup.style.top = SETUP_TOP;
     setup.style.left = SETUP_LEFT;
+
     document.removeEventListener('keydown', onPopupEscPress);
   };
 
