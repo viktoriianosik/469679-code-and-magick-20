@@ -20,17 +20,21 @@
     var currentColor = colorArray[randomElement(colorArray)];
     blockChange.style[colorProperty] = currentColor;
     input.value = currentColor;
+    return currentColor;
   };
 
   wizardCoat.addEventListener('click', function () {
-    onChangeColor(inputCoat, coatColors, wizardCoat, 'fill');
+    window.coatColor = onChangeColor(inputCoat, coatColors, wizardCoat, 'fill');
+    window.setup.updateWizards();
   });
 
   wizardEyes.addEventListener('click', function () {
-    onChangeColor(inputEyes, eyesColors, wizardEyes, 'fill');
+    window.eyesColor = onChangeColor(inputEyes, eyesColors, wizardEyes, 'fill');
+    window.setup.updateWizards();
   });
 
   wizardFireball.addEventListener('click', function () {
     onChangeColor(inputFireball, fireballColors, wizardFireball, 'backgroundColor');
   });
+
 })();
