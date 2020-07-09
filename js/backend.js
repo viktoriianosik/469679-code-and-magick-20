@@ -5,6 +5,7 @@
     OK: 200,
   };
   var TIME_OUT = 10000;
+
   var load = function (onLoad, onError) {
     var URL = 'https://javascript.pages.academy/code-and-magick/data';
     var xhr = new XMLHttpRequest();
