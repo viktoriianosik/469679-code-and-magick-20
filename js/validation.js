@@ -25,12 +25,16 @@
 
   wizardCoat.addEventListener('click', function () {
     window.coatColor = onChangeColor(inputCoat, coatColors, wizardCoat, 'fill');
-    window.setup.updateWizards();
+    window.debounce(function () {
+      window.setup.updateWizards();
+    });
   });
 
   wizardEyes.addEventListener('click', function () {
     window.eyesColor = onChangeColor(inputEyes, eyesColors, wizardEyes, 'fill');
-    window.setup.updateWizards();
+    window.debounce(function () {
+      window.setup.updateWizards();
+    });
   });
 
   wizardFireball.addEventListener('click', function () {
